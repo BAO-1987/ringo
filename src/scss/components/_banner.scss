@@ -1,0 +1,173 @@
+.banner {
+  @include bg-cover;
+
+  position: relative;
+  z-index: 1;
+  padding-top: rem(130);
+  min-height: 690px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+    background: linear-gradient(180deg, rgba(0 0 0 / 20%) -13.19%, rgba(0 0 0 / 85%) 94.01%);
+  }
+
+  &__content {
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 rem(15);
+    width: 100%;
+    max-width: 880px;
+    text-align: center;
+
+    &--second {
+      max-width: 480px;
+    }
+
+    &--last {
+      max-width: 520px;
+    }
+
+    @include tablet {
+      padding-top: rem(80);
+      width: 80%;
+    }
+  }
+
+  &__title {
+    @include h1;
+
+    font-family: "Lato", sans-serif;
+  }
+
+  &__descr {
+    margin-bottom: rem(50);
+    opacity: 0.8;
+
+    @include mobile-l {
+      margin-bottom: rem(25);
+      font-size: 16px;
+    }
+  }
+
+  &-icon {
+    width: 20px;
+    height: 15px;
+    color: var(--color-white);
+    fill: currentcolor;
+    object-fit: cover;
+    transition: color 0.3s ease-in;
+
+    &--revers {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__nav {
+    position: relative;
+    bottom: 75px;
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -40px;
+      z-index: 2;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-white);
+      width: calc((1200 / 1600) * 100vw);
+      opacity: 0.4;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &-btns {
+    position: absolute;
+    left: 12%;
+    z-index: 30;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding-top: rem(80);
+  }
+
+  @include mobile-s {
+    padding-top: rem(40);
+    min-height: 620px;
+  }
+}
+
+.banner-btn {
+  &__prev {
+    margin-right: 30px;
+  }
+
+  :hover {
+    color: var(--color-brown);
+  }
+}
+
+.btn-reset.swiper-button-disabled .banner-icon {
+  opacity: 0.5;
+}
+
+.swiper-pagination {
+  position: absolute;
+  right: 13%;
+  z-index: 10;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s opacity linear;
+
+  @include mobile {
+    left: 0;
+    right: 0;
+  }
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-white);
+  opacity: 0.3;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translateX(-10px);
+  }
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}

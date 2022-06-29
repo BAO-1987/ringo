@@ -1,0 +1,16 @@
+import './components/_heroBanner'
+import './components/_portfolioSlider'
+import './components/_partnersSlider'
+import './components/_anim'
+import './components/_scrollAnimation'
+// import './components/reviewsSlider'
+// import './components/selects'
+// import './components/accordion'
+// import './components/scroll'
+import './components/_scrollTo'
+import './components/_modal'
+import './components/_counter'
+import './components/_animation'
+import './components/_validation'
+
+

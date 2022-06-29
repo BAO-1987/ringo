@@ -1,0 +1,238 @@
+.footer {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    border-bottom: 1px solid var(--color-black);
+    width: 100%;
+    opacity: 0.2;
+
+    @include tablet {
+      bottom: 300px;
+    }
+  }
+
+  &__left {
+    margin-right: rem(45);
+
+    .logo {
+      margin-bottom: rem(30);
+    }
+
+    @include tablet {
+      margin-right: rem(15);
+    }
+  }
+
+  &__top {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, auto);
+    padding-bottom: rem(100);
+    gap: rem(20);
+
+    @include tablet {
+      padding-bottom: rem(50);
+    }
+
+    @include mobile-l {
+      justify-content: space-evenly;
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @include mobile-s {
+      justify-items: center;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &-social {
+    @include flex-v-center;
+
+    &__title {
+      display: block;
+      margin-right: rem(10);
+      font-size: 14px;
+      line-height: 1;
+      opacity: 0.5;
+    }
+  }
+
+  &-nav__list {
+    display: block;
+    column-count: 2;
+    column-gap: rem(85);
+
+    @include tablet {
+      column-gap: rem(50);
+    }
+
+    @include mobile-l {
+      column-gap: rem(25);
+    }
+  }
+
+  &-nav__item:not(:last-child) {
+    margin-bottom: rem(15);
+  }
+
+  &-nav__link {
+    position: relative;
+    font-size: 16px;
+    line-height: 1;
+    transition: all 0.3s linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentcolor;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform 0.3s linear;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-brown);
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      &::before {
+        transform: scale(1);
+      }
+    }
+
+    &:active {
+      color: var(--color-brown);
+    }
+  }
+
+  &-contact {
+    display: grid;
+    align-items: flex-start;
+    justify-items: center;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(20);
+      font-family: "Lato", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--color-green);
+      fill: currentcolor;
+      object-fit: cover;
+      transition: color 0.3s ease-in;
+
+      svg {
+        margin-right: 5px;
+        width: 22px;
+        height: 22px;
+      }
+
+      &:hover {
+        color: var(--color-brown);
+
+        svg {
+          color: var(--color-brown);
+        }
+      }
+    }
+
+    @include mobile-l {
+      grid-column: 1/3;
+    }
+
+    @include mobile-s {
+      grid-column: 1;
+    }
+  }
+
+  &__middle {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -25px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-black);
+      width: 100%;
+      opacity: 0.2;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(40);
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.5;
+  }
+}
+
+.brand {
+  &__title {
+    display: block;
+    margin-bottom: rem(40);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-green);
+  }
+
+  &__list {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(9, 1fr);
+    margin-bottom: rem(40);
+    gap: rem(40);
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(20);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item:last-child {
+    @include tablet {
+      grid-column: 2/4;
+    }
+
+    @include mobile {
+      grid-column: inherit;
+    }
+  }
+
+  &__link {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-in;
+
+    &:hover {
+      opacity: 1;
+      filter: none;
+    }
+
+    @include tablet {
+      opacity: 1;
+      filter: none;
+    }
+  }
+}

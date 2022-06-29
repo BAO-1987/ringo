@@ -1,0 +1,99 @@
+.provide {
+  padding: rem(100) 0;
+  color: var(--color-white);
+  background-color: var(--color-green);
+
+  &__list {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(40);
+
+    p {
+      font-size: 24px;
+      line-height: 1.3;
+      opacity: 0.5;
+
+      @include mobile {
+        font-size: 18px;
+      }
+
+      @include mobile-ss {
+        font-size: 16px;
+      }
+    }
+
+    @include mobile-l {
+      gap: rem(20);
+    }
+
+    @include mobile-s {
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    padding-top: rem(70);
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 65px;
+      height: 65px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--furniture {
+      &::before {
+        background-image: url("../img/sprite.svg#furniture");
+      }
+    }
+
+    &--lighting {
+      &::before {
+        width: 45px;
+        height: 70px;
+        background-image: url("../img/sprite.svg#lighting");
+      }
+    }
+
+    &--machinery {
+      &::before {
+        background-image: url("../img/sprite.svg#machinery");
+      }
+    }
+
+    &--doors {
+      &::before {
+        background-image: url("../img/sprite.svg#doors");
+      }
+    }
+
+    &--floor {
+      &::before {
+        background-image: url("../img/sprite.svg#floor");
+      }
+    }
+
+    &--projects {
+      &::before {
+        background-image: url("../img/sprite.svg#projects");
+      }
+    }
+  }
+
+  @include tablet {
+    padding: rem(50) 0;
+  }
+}

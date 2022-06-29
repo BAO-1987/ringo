@@ -1,0 +1,9 @@
+.hero {
+  position: relative;
+  padding-top: rem(90);
+  color: var(--color-white);
+
+  @include mobile-l {
+    padding-top: rem(40);
+  }
+}

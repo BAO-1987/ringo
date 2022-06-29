@@ -1,0 +1,98 @@
+.stage {
+  &__list {
+    counter-reset: li;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(80);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -35px;
+      z-index: 2;
+      margin: 0 auto;
+      border-top: 1px solid var(--color-black);
+      width: 100%;
+      opacity: 0.4;
+
+      @include mobile-l {
+        bottom: -10px;
+      }
+    }
+
+    @include desktop {
+      gap: rem(40);
+    }
+
+    @include mobile-l {
+      justify-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+    }
+
+    @include mobile-s {
+      gap: rem(10);
+    }
+
+    @include mobile-s {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    max-width: 235px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--color-green);
+
+    &::before {
+      @include flex-all-center;
+
+      counter-increment: li;
+      content: counter(li, decimal-leading-zero);
+      position: absolute;
+      border: 1px solid var(--color-black);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+
+    @include mobile-l {
+      display: grid;
+      justify-items: center;
+      max-width: fit-content;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(15);
+    padding-top: rem(95);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-black);
+
+    @include mobile {
+      margin-bottom: rem(5);
+      padding-top: rem(65);
+    }
+  }
+
+  &__text {
+    min-height: 90px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.45;
+    opacity: 0.8;
+
+    @include mobile-s {
+      min-height: max-content;
+    }
+  }
+}

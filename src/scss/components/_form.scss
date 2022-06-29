@@ -1,0 +1,76 @@
+.form {
+  width: 100%;
+
+  &__btn {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    font-weight: 500;
+    opacity: 0.8;
+
+    &--file {
+      margin-bottom: 40px;
+      padding-left: 35px;
+      font-size: 14px;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("../img/sprite.svg#file");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__area {
+    appearance: none;
+    outline: 0;
+    border: none;
+    border-bottom: 2px solid var(--color-white);
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: transparent;
+
+    &--text {
+      min-height: 110px;
+      resize: none;
+    }
+  }
+
+  &:focus {
+    border: 1 solid var(--color-yellow);
+  }
+
+  .just-validate-error-label {
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: var(--color-white) !important;
+  }
+
+  &__error {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    font-size: 13px;
+    color: var(--color-red);
+    bottom: -20px;
+    left: 0;
+  }
+}
+
+.custom-checkbox {
+  @include checkbox;
+}

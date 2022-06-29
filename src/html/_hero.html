@@ -1,0 +1,59 @@
+<section class="hero">
+
+  <h1 class="visually-hidden">Виробництво меблів</h1>
+
+  <div class="hero__banner">
+
+    <ul class="hero__list swiper-wrapper">
+
+      @include("hero-slider/_banner-first.html")
+
+      @include("hero-slider/_banner-second.html")
+
+      @include("hero-slider/_banner-last.html")
+
+    </ul>
+
+    <div class="banner__nav">
+
+      <div class="banner-btns">
+
+        <button class="banner-btn__prev banner-btn btn-reset" type="button">
+
+          <svg class="banner-icon banner-icon--revers">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+
+          <span class="visually-hidden">
+            Кнопка прогорнути назад
+          </span>
+
+        </button>
+
+        <button class="banner-btn__next banner-btn btn-reset" type="button">
+
+          <svg class="banner-icon">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+
+          <span class="visually-hidden">
+            Кнопка прогорнути в перед
+          </span>
+
+        </button>
+
+      </div>
+
+      <div class="swiper-pagination">
+
+        <span class="swiper-pagination-bullet"></span>
+
+        <span class="swiper-pagination-bullet"></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

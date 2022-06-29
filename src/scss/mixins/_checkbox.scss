@@ -1,0 +1,57 @@
+@mixin checkbox {
+  position: relative;
+  cursor: pointer;
+
+  &__field {
+    appearance: none;
+    position: absolute;
+    border-color: transparent;
+  }
+
+  &__content {
+    padding-left: 25px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 2px solid var(--color-white);
+      width: 15px;
+      height: 15px;
+      box-sizing: border-box;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 5px;
+      height: 5px;
+      box-sizing: border-box;
+      background-image: url("../img/sprite.svg#checkbox");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+}
+
+.custom-checkbox__field:checked+.custom-checkbox__content::after {
+  opacity: 1;
+}
+
+.custom-checkbox__field:focus+.custom-checkbox__content::before {
+  outline-offset: 2px;
+}
+
+.custom-checkbox__field:disabled+.custom-checkbox__content {
+  opacity: 0.4;
+  pointer-events: none;
+}
