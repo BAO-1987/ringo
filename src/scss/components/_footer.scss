@@ -26,6 +26,10 @@
     @include tablet {
       margin-right: rem(15);
     }
+
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__top {
@@ -105,13 +109,19 @@
     }
 
     &:hover {
+      color: var(--color-brown);
+
       &::before {
         transform: scale(1);
       }
     }
 
     &:active {
-      color: var(--color-brown);
+      color: var(--color-active);
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 

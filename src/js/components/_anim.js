@@ -1,36 +1,30 @@
-// import {gsap} from "gsap";
+import {
+  gsap
+} from "gsap";
 
-// let menuItem = document.querySelectorAll(".advantage__item");
-// let menuImage = document.querySelectorAll(".advantage__box");
+const item = document.querySelectorAll(".advantage__item");
 
-// // adding eventListeners to all the menuItems.
-// for (let i = 0; i < 5; i++) {
-//   //   image reveal animation
-//   const animation = gsap.to(menuImage[i], {
-//     opacity: 1,
-//     duration: 0.2,
-//     // scale: 1,
-//     ease: "ease-in-out"
-//   });
+item.forEach((el) => {
+  const image = el.querySelector('.advantage__box')
 
-//   menuItem[i].addEventListener("mouseenter", () => animation.play());
-//   menuItem[i].addEventListener("mouseleave", () => animation.reverse());
+  el.addEventListener('mouseenter', (e) => {
+    gsap.to(image, {
+      opacity: 1,
+      duration: 0.5,
+      scale: 1,
+      ease: "ease-in"
+    })
+  })
 
-//   //   initialization
-//   animation.reverse();
-// }
+  el.addEventListener('mouseleave', (e) => {
+    gsap.to(image, {
+      opacity: 0
+    })
+  })
 
-// //   to move image along with cursor
-// function moveText(e) {GSDevTools
-//   gsap.to([...menuImage], {
-//     css: {
-//       left: e.pageX + 50,
-//       top: e.pageY,
-//     },
-//     duration: 0.3,
-//   });
-// }
-
-// menuItem.forEach((el) => {
-//   el.addEventListener("mousemove", moveText);
-// });
+  el.addEventListener('mousemove', (e) => {
+    gsap.set(image, {
+      x: e.offsetX + 20,
+       })
+  })
+})

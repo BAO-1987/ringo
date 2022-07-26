@@ -1,16 +1,15 @@
+
    <form class="form" action="#" autocomplete="off" method="get">
 
      <label class="form__label">
 
-       <input class="form__area" name="name" data-target="name" type="text" placeholder=" Ім’я">
-
-       <span class="form__error">Введите Имя</span>
+       <input class="form__area input-name" data-target="name" type="text" placeholder=" Ім’я">
 
      </label>
 
      <label class="form__label">
 
-       <input class="form__area" name="phone" data-target="tel" type="tel" placeholder="Номер телефону">
+       <input class="form__area input-tel" type="tel" data-target="tel" placeholder="Номер телефону">
 
      </label>
 
@@ -24,25 +23,21 @@
 
        Прикріпити проект
 
-       <input class="visually-hidden" type="file">
+       <input class="visually-hidden input-file" type="file" multiple id="myfile">
 
      </label>
 
-     <button class="form__btn btn" type="submit" data-graph-target="modal-finish">
+     <button class="form__btn btn" type="submit" data-graph-path="modal-finish">
 
        Відправити
 
      </button>
 
      <label class="form__label custom-checkbox" for="consent_checkbox">
-       <input class="custom-checkbox__field" id="consent_checkbox" name="check" type="checkbox">
+
+       <input class="custom-checkbox__field" data-target="check" name="check" id="consent_checkbox" type="checkbox">
 
        <span class="custom-checkbox__content">Даю згоду на оброблення персональних даних</span>
-
-       <span class="form__error custom-checkbox__error">
-         Вы не согласились на обработку персональных данных
-       </span>
-
 
      </label>
 

@@ -2,6 +2,10 @@
   &__nav {
     display: flex;
     justify-content: center;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &-icon {

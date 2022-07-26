@@ -6,11 +6,19 @@
     &::before {
       content: "";
       position: absolute;
+      top: -8%;
       z-index: 2;
-      margin: 0 auto;
       border-top: 1px solid var(--color-black);
       width: 100%;
       opacity: 0.2;
+
+      @include tablet {
+        top: -4%;
+      }
+
+      @include mobile-l {
+        top: -2%;
+      }
     }
   }
 
@@ -18,15 +26,9 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: rem(30);
     padding-top: rem(50);
     transition: all 0.5s linear;
     cursor: pointer;
-
-    @include mobile {
-      grid-template-columns: repeat(1, 1fr);
-      padding-top: rem(25);
-    }
 
     &::before {
       counter-increment: li;
@@ -49,6 +51,11 @@
 
     &:hover .advantage__title {
       color: var(--color-brown);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      padding-top: rem(25);
     }
   }
 
@@ -89,16 +96,20 @@
     @include mobile {
       font-size: 26px;
     }
+
+    @include mobile-s {
+      font-size: 20px;
+    }
   }
 
   &__box {
     position: absolute;
     left: 0;
-    top: 20%;
-    z-index: 5;
-    margin-top: -50px;
+    z-index: 2;
+    margin-top: -60px;
     opacity: 0;
     filter: drop-shadow(0 15px 20px rgba(0 0 0 / 5%));
-    // transform: scale(0.4);
+    transform: scale(0.4);
+    pointer-events: none;
   }
 }

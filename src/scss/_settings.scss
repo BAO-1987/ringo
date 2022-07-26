@@ -59,7 +59,6 @@
 }
 
 .btn {
-  position: relative;
   display: inline-block;
   padding: 20px 50px;
   font-weight: 700;
@@ -124,10 +123,6 @@ section {
 
   @include tablet {
     margin-bottom: rem(40);
-  }
-
-  @include mobile-l {
-    margin-bottom: rem(20);
   }
 }
 
@@ -216,15 +211,6 @@ section {
   height: 25px;
 }
 
-// .slider-icon {
-//   width: 20px;
-//   height: 20px;
-
-//   &--revers {
-//     transform: rotate(180deg);
-//   }
-// }
-
 .social {
   &__list {
     display: flex;
@@ -234,10 +220,6 @@ section {
   &__item {
     &:not(:last-child) {
       margin-right: rem(15);
-
-      // @include desktop {
-      //   margin-left: rem(5);
-      // }
     }
 
     &--phone {

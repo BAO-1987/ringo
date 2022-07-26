@@ -1,22 +1,28 @@
 <div class="graph-modal">
 
-  <div class="graph-modal__container modal-form" role="dialog" aria-modal="true" data-graph-target="first">
+  <div class="graph-modal__container graph-modal__container--gifts" role="dialog" aria-modal="true"
+    data-graph-target="modal-form">
 
-    <button class="btn-reset graph-modal__close" aria-label="Закрити модальне вікно"></button>
+    <button class="graph-modal__close js-modal-close" data-close="modal" aria-label="Закрити модальне вікно"></button>
 
     <div class="graph-modal__content">
 
-      <p class="graph-modal__title">Хочете стати нашим партнером?</p>
+      <p class="graph-modal__title">Хочете отримати подарунок?</p>
 
-      <!-- @include('_form.html') -->
+      <p class="graph-modal__text">Заповніть форму, і ми зв'яжемося та розповімо про умови акції</p>
+
+      @include("_form.html")
 
     </div>
+
   </div>
 
   <div class="graph-modal__container graph-modal__container--finish" role="dialog" aria-modal="true"
-    data-graph-target="finish">
+    data-graph-target="modal-finish">
 
-    <button class="btn-reset graph-modal__close" aria-label="Закрити модальне вікно"></button>
+    <button class="graph-modal__close js-modal-close" type="button" aria-label="Закрити модальне вікно">
+
+    </button>
 
     <div class="graph-modal__content graph-modal__content--finish">
 
@@ -28,6 +34,23 @@
 
   </div>
 
+  <div class="graph-modal__container graph-modal__container--partners" role="dialog" aria-modal="true"
+    data-graph-target="modal-partners">
+
+    <button class="graph-modal__close js-modal-close" type="button" aria-label="Закрити модальне вікно">
+
+    </button>
+
+    <div class="graph-modal__content graph-modal__content--finish">
+
+      <p class="graph-modal__title">Хочете стати нашим партнером?</p>
+
+      <p class="graph-modal__text">Заповніть форму, і ми зв'яжемося та обговоримо з вами усі деталі</p>
+
+      @include("_form.html")
+
+    </div>
+
+  </div>
+
 </div>
-
-
