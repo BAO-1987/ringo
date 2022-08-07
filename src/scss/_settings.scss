@@ -182,6 +182,10 @@ section {
 
       &:hover {
         color: var(--color-brown);
+
+        svg {
+          color: var(--color-brown);
+        }
       }
 
       @include mobile-s {
