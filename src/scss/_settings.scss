@@ -1,45 +1,22 @@
 .page {
   height: 100%;
+
+  &__body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-black);
+    background-color: var(--color-white);
+  }
 }
 
 .site-container {
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    background-color: rgba(0 0 0 / 60%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
-  }
-}
-
-.site-container.is-active {
-  &::before {
-    z-index: 500;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.page__body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.5;
-  text-rendering: optimizespeed;
-  color: var(--color-black);
-  background-color: var(--color-white);
+  overflow-x: hidden;
 }
 
 .container {
@@ -55,11 +32,10 @@
 }
 
 .logo {
-  display: block;
+  display: flex;
 }
 
 .btn {
-  display: inline-block;
   padding: 20px 50px;
   font-weight: 700;
   font-size: 16px;
@@ -130,44 +106,6 @@ section {
   outline: none;
 }
 
-.social__link {
-  display: block;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1;
-  color: var(--color-green);
-  fill: currentcolor;
-  object-fit: cover;
-  transition: color 0.3s ease-in;
-
-  &--phone {
-    display: flex;
-    align-items: center;
-    color: var(--color-green);
-    fill: currentcolor;
-    transition: color 0.3s ease-in;
-
-    svg {
-      margin-right: 5px;
-      width: 22px;
-      height: 22px;
-    }
-
-    &:hover {
-      color: var(--color-brown);
-
-      svg {
-        color: var(--color-brown);
-      }
-    }
-
-    @include mobile-s {
-      font-size: 0;
-    }
-  }
-}
-
 .burger {
   display: none;
 
@@ -187,7 +125,7 @@ section {
   transition: color 0.3s ease-in;
 
   &:hover {
-    color: var(--red);
+    color: var(--color-red);
   }
 
   &--facebook {
@@ -195,7 +133,7 @@ section {
     height: 22px;
 
     &:hover {
-      color: var(--blue);
+      color: var(--color-blue);
     }
   }
 
@@ -215,6 +153,41 @@ section {
   &__list {
     display: flex;
     align-items: center;
+  }
+
+  &__link {
+    display: block;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-green);
+    fill: currentcolor;
+    object-fit: cover;
+    transition: color 0.3s ease-in;
+
+    &--phone {
+      display: flex;
+      align-items: center;
+      color: var(--color-green);
+      fill: currentcolor;
+      transition: color 0.3s ease-in;
+
+      svg {
+        margin-right: 5px;
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+      }
+
+      &:hover {
+        color: var(--color-brown);
+      }
+
+      @include mobile-s {
+        font-size: 0;
+      }
+    }
   }
 
   &__item {

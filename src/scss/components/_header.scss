@@ -45,7 +45,7 @@
 
   &__item {
     &:not(:last-child) {
-      margin-right: rem(40);
+      margin-right: rem(50);
 
       @include desktop {
         margin-right: rem(20);

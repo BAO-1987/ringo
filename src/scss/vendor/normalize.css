@@ -21,30 +21,8 @@ a {
   cursor: pointer;
 }
 
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
-  text-decoration: underline;
-}
-
 small {
   font-size: 80%;
-}
-
-sub,
-sup {
-  position: relative;
-  vertical-align: baseline;
-  font-size: 75%;
-  line-height: 0;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
 }
 
 img {
@@ -88,23 +66,6 @@ button {
   line-height: normal;
   background-color: transparent;
   cursor: pointer;
-}
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-legend {
-  display: table;
-  padding: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-  white-space: normal;
-  color: inherit;
-}
-
-progress {
-  vertical-align: baseline;
 }
 
 textarea {

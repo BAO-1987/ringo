@@ -18,7 +18,7 @@
       z-index: 2;
       background: linear-gradient(0deg, rgba(61 74 57 / 70%), rgba(61 74 57 / 70%));
 
-      @include mobile-l {
+      @include mobile {
         text-align: center;
         background: inherit;
       }
@@ -98,11 +98,11 @@
     right: 1%;
   }
 
-  .swiper-slide-next .portfolio__box::before {
+  .swiper-slide-active .portfolio__box::before {
     background: transparent;
   }
 
-  .swiper-slide-next h3 {
+  .swiper-slide-active h3 {
     opacity: 1;
     visibility: visible;
 
@@ -112,7 +112,7 @@
     }
   }
 
-  .swiper-slide-next span {
+  .swiper-slide-active span {
     opacity: 0.5;
     visibility: visible;
 

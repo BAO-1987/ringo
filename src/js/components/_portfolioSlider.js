@@ -7,6 +7,7 @@ import Swiper, {
 new Swiper(_vars.portfolioSlider, {
   slidesPerView: 1,
   spaceBetween: 0,
+  centeredSlides: true,
   loop: true,
   speed: 1500,
   autoplay: {

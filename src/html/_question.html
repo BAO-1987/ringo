@@ -2,17 +2,60 @@
 
   <div class="question__inner">
 
-    <div class="question__content" data-aos="fade-up" data-aos-delay="300">
+    <div class="question__content">
 
       <h2 class="title question__title">Залишилися питання?</h2>
 
       <p>Отримай безкоштовну консультацію менеджера та прорахунок проекту</p>
 
-       @include('_form.html')
+    <form class="form" action="#" autocomplete="off" method="get">
+
+      <label class="form__label">
+
+        <input class="form__area input-name" data-target="name" type="text" placeholder=" Ім’я">
+
+      </label>
+
+      <label class="form__label">
+
+        <input class="form__area input-tel" type="tel" data-target="tel" placeholder="Номер телефону">
+
+      </label>
+
+      <label class="form__label form__label--text">
+
+        <textarea class="form__area form__area--text" name="message" placeholder="Коротко про себе"></textarea>
+
+      </label>
+
+      <label class="form__label form__label--file">
+
+        Прикріпити проект
+
+        <input class="visually-hidden input-file" type="file" multiple id="myfile">
+
+      </label>
+
+      <button class="form__btn btn" type="submit" data-graph-path="modal-finish">
+
+        Відправити
+
+      </button>
+
+      <label class="form__label custom-checkbox" for="consent_checkbox--question">
+
+        <input class="custom-checkbox__field" data-target="check" name="check" id="consent_checkbox--question"
+          type="checkbox">
+
+        <span class="custom-checkbox__content">Даю згоду на оброблення персональних даних</span>
+
+      </label>
+
+    </form>
 
     </div>
 
-    <div class="question__box" data-aos="fade-left" data-aos-delay="450">
+    <div class="question__box">
       <picture>
         <source srcset="img/question-bg.avif" type="image/avif">
         <source srcset="img/question-bg.webp" type="image/webp">
